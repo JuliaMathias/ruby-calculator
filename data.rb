@@ -21,13 +21,13 @@ shopping_list = [{
 empty_list = []
 
 people_list = [{
-  name: "Julia Mathias"
+  name: "Julia Mathias",
   email: "juliamathias@gmail.com"
 }, {
-  name: "Renan Mathias"
+  name: "Renan Mathias",
   email: "renanmathias@gmail.com"
 }, {
-  name: "Lais Mathias"
+  name: "Lais Mathias",
   email: "laismathias@gmail.com"
 }
 ]
