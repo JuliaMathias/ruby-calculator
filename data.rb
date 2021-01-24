@@ -20,14 +20,4 @@ shopping_list = [{
 
 empty_list = []
 
-people_list = [{
-  name: "Julia Mathias",
-  email: "juliamathias@gmail.com"
-}, {
-  name: "Renan Mathias",
-  email: "renanmathias@gmail.com"
-}, {
-  name: "Lais Mathias",
-  email: "laismathias@gmail.com"
-}
-]
+email_list = ["juliamathias@gmail.com", "renanmathias@gmail.com", "laismathias@gmail.com"]

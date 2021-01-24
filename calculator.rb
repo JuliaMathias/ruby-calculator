@@ -20,16 +20,9 @@ shopping_list = [{
 }
 ]
 
-people_list = [{
-  name: "Julia Mathias",
-  email: "juliamathias@gmail.com"
-}, {
-  name: "Renan Mathias",
-  email: "renanmathias@gmail.com"
-}, {
-  name: "Lais Mathias",
-  email: "laismathias@gmail.com"
-}]
+email_list = ["juliamathias@gmail.com", "renanmathias@gmail.com", "laismathias@gmail.com"]
+
+empty_list = []
 
 
 def add_values(list)
@@ -45,24 +38,34 @@ def add_values(list)
   total_cost
 end
 
-
-
-def calculator (shopping_list, people_list)
-  total_cost = add_values(shopping_list)
-  number_of_people = people_list.length
+def split_bill(total_cost, email_list)
+  number_of_people = email_list.length
   base = Array.new(number_of_people, (total_cost / number_of_people))
   remainder = total_cost % number_of_people
   return base if remainder.zero?
   while remainder > 0
-    base.each_with_index do |num, idx|
+    base.each_with_index do |num, index|
       if remainder > 0
-        base[idx] += 1
+        base[index] += 1
         remainder -= 1
       end
     end
   end
-  puts base
+  base
 end
 
-calculator(shopping_list, people_list)
+def calculator (shopping_list, email_list)
+  if shopping_list.empty?
+    puts "Your shopping list is empty, we can't calculate the bill."
+  elsif email_list.empty?
+    puts "Your email list is empty, we can't calculate the bill."
+  else
+    total_cost = add_values(shopping_list)
+    split_values = split_bill(total_cost, email_list)
+    puts [email_list, split_values].transpose.to_h
+  end
+end
 
+calculator(shopping_list, email_list)
+calculator(empty_list, email_list)
+calculator(shopping_list, empty_list)
